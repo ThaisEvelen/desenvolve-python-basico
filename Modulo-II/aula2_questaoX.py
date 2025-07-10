@@ -39,3 +39,4 @@ saldo=saldo*Juros
 print(saldo)
 saldo=saldo*Juros
 print(saldo)
+print(type(saldo))
