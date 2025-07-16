@@ -20,5 +20,6 @@ força = int(input("Digite os pontos de força (de 1 a 20): "))
 magia = int(input("Digite os pontos de magia (de 1 a 20): "))
 guerreiro = ((força>=15)and(magia<=10))
 mago = ((força<=10)and (magia>=15))
-arqueiro =((5 <=força <=15)(5<= magia <=15))
+arqueiro =((5 <=força <=15)and(5<= magia <=15))
+personagem == guerreiro or mago or arqueiro
 print(guerreiro or mago or arqueiro)
