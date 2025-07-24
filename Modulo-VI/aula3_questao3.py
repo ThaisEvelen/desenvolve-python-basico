@@ -16,7 +16,7 @@ while i < len(lista):
         inicio = i
         while i < len(lista) and lista[i] < 0:
             i += 1
-        fim = i  # índice final (exclusivo)
+        fim = i 
         tamanho = fim - inicio
         if tamanho > maior_tamanho:
             maior_tamanho = tamanho
@@ -24,13 +24,9 @@ while i < len(lista):
             maior_fim = fim
     else:
         i += 1
-
-# Exibir o intervalo encontrado (se existir)
 if maior_tamanho > 0:
     print("Intervalo removido:", lista[maior_inicio:maior_fim])
     del lista[maior_inicio:maior_fim]
 else:
     print("Nenhum intervalo de negativos encontrado.")
-
-# Lista final
 print("Lista final:", lista)
