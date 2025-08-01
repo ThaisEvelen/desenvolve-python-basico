@@ -16,7 +16,6 @@ def embaralhar_palavras(frase):
             nova_frase.append(palavra_embaralhada)
 
     return ' '.join(nova_frase)
-
 entrada = input("Digite uma frase para embaralhar: ")
 resultado = embaralhar_palavras(entrada)
 print("Frase embaralhada:", resultado)
