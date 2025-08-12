@@ -1,0 +1,110 @@
+Documento Descritivo
+Introdução
+O sistema modela uma livraria fictícia que realiza o controle de usuários e produtos (neste caso, livros).
+Os tipos de usuários que podem usufruir do sistema são:
+
+Admin – responsável por cadastrar, atualizar, excluir e gerenciar usuários e produtos.
+
+Cliente – pode atualizar sua própria senha e consultar produtos.
+
+Os produtos oferecidos pela empresa são livros com informações como: código, título, autor, preço e quantidade em estoque.
+
+Implementação
+
+1. Usuários
+Estrutura de Dados
+
+É utilizado um namedtuple chamado Usuario para armazenar cada registro de usuário no formato:
+
+Usuario(login, senha, tipo)
+Os usuários são carregados em um dicionário onde:
+
+Chave: login do usuário
+
+Valor: objeto Usuario com login, senha e tipo.
+
+Arquivo de Registro
+
+Nome do arquivo: usuarios.txt
+
+Formato CSV (campos separados por vírgula), contendo:
+
+login, senha, tipo
+Ao iniciar, se o arquivo não existir ou estiver vazio, o sistema cria automaticamente um usuário padrão:
+
+admin, admin, admin
+Funcionalidades (CRUD)
+
+Create (C): cadastrar_usuario() – adiciona um novo usuário no arquivo.
+
+Read (R): fazer_login() – verifica credenciais para autenticar o usuário.
+
+Update (U): atualiza_senha() – permite alterar senha (clientes só alteram a própria; admin pode alterar de qualquer usuário).
+
+Delete (D): excluir_usuario() – remove um usuário do arquivo.
+
+2. Produtos/Serviços (Livros)
+Estrutura de Dados
+
+É utilizado um namedtuple chamado Livro para armazenar cada registro no formato:
+
+Livro(codigo, titulo, autor, preco, quantidade)
+Os livros são armazenados em um dicionário:
+
+Chave: código do livro
+
+Valor: objeto Livro.
+
+Arquivo de Registro
+
+Nome do arquivo: livros.txt
+
+Formato CSV (campos separados por vírgula), contendo:
+
+codigo, titulo, autor, preco, quantidade
+Se o arquivo não existir, o sistema cria um com cabeçalho.
+
+Funcionalidades (CRUD)
+
+Create (C): cadastrar_livro() – adiciona novo livro no sistema.
+
+Read (R):
+
+buscar_livro() – busca por código ou parte do título.
+
+listar_ordenado_nome() – lista livros por ordem alfabética do título.
+
+listar_ordenado_preco() – lista livros por ordem crescente de preço.
+
+Update (U): atualizar_livro() – altera título, autor, preço ou quantidade.
+
+Delete (D): excluir_livro() – remove um livro pelo código.
+
+Conclusão
+O desenvolvimento do sistema permitiu criar um CRUD funcional para usuários e produtos, com persistência em arquivos CSV simples e interface visual no terminal usando a biblioteca Rich para melhorar a apresentação.
+
+Dificuldades encontradas:
+
+Gerenciar permissões de acesso (clientes só podem alterar a própria senha, enquanto admins têm mais privilégios).
+
+Garantir que os arquivos sejam criados corretamente e com registros iniciais.
+
+Implementar buscas e ordenações com critérios diferentes.
+
+Escolhas bem-sucedidas:
+
+Uso de namedtuple para simplificar o armazenamento e leitura de dados.
+
+Uso da biblioteca Rich para tornar a interface mais amigável e clara.
+
+Separação das funções por responsabilidade (CRUD e menus).
+
+O que poderia ser feito diferente:
+
+Unificar o sistema em um único script principal (atualmente, usuários e produtos estão em arquivos separados).
+
+Implementar senhas criptografadas em vez de armazenar texto puro.
+
+Criar testes automáticos para validar as funcionalidades.
+
+Melhorar a integração entre cadastro de usuários e produtos, permitindo ações encadeadas.

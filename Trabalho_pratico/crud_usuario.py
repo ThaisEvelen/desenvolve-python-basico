@@ -78,7 +78,7 @@ def ler_usuarios(arquivo_csv):
 
     return usuarios
 
-# ===================== Funções CRUD (mantendo nomes originais) =====================
+# ===================== Funções CRUD  =====================
 
 ##### CRUD Read
 # Função para realizar login de um usuário.

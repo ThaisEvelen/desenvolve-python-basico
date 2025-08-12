@@ -69,7 +69,7 @@ def salvar_livros(livros):
 
 
 # ===================== CRUD =====================
-
+#Create
 def cadastrar_livro(livros):
     """
     Cadastra um novo livro no sistema.
@@ -90,7 +90,7 @@ def cadastrar_livro(livros):
     salvar_livros(livros)
     console.print("[green]Livro cadastrado com sucesso![/green]")
 
-
+#Read
 def buscar_livro(livros):
     """
     Busca livros pelo código ou parte do título e exibe os resultados.
@@ -128,7 +128,7 @@ def listar_ordenado_preco(livros):
     for l in sorted(livros.values(), key=lambda x: x.preco):
         console.print(f"[cyan]{l.codigo}[/cyan] - {l.titulo} ({l.autor}) - R${l.preco:.2f} - Estoque: {l.quantidade}")
 
-
+#Update
 def atualizar_livro(livros):
     """
     Atualiza as informações de um livro existente.
@@ -149,7 +149,7 @@ def atualizar_livro(livros):
     salvar_livros(livros)
     console.print("[green]Livro atualizado com sucesso![/green]")
 
-
+#Delete
 def excluir_livro(livros):
     """
     Remove um livro do sistema pelo código.
